@@ -1,10 +1,9 @@
 from turtle import title
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 #models
 from .models import Project
 
 # Create your views here.
 def profile(request):
     project = Project.objects.all()
-    
-    return HttpResponse(project)
+    return render(request, 'profile.html')

@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from urllib import response
+from django.shortcuts import render
 
 #Models
 from .models import Post
@@ -7,7 +8,9 @@ from .models import Post
 
 def posts(request):
     blogs =  Post.objects.all()
-    return HttpResponse('<h1>Pagina de publicaciones</h1>')
+    return render(request, 'blogs.html')
 
 def post(request, id):
-        return HttpResponse('<h1>Pagina de blog</h1>')
+    #blog = Post.objects.get(id)
+    #content = f'{blog.title} - {blog.descriptcion}'
+    return render(request, 'blog.html')
