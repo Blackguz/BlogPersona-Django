@@ -5,89 +5,30 @@
     <section class="news">
         <div class="news-content">
             <h3>Noticia</h3>
-            <img src="img/pc-img.jpg" alt="">
+            <img src="{{frist.image.url}}" alt="">
             <div class="news-info">
-                <h2>Titulo Blogspost</h2>
+                <h2>{{frist.descriptcion}}</h2>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Et cupiditate illum nemo aut dolor odio eius iste cumque fugiat officiis, assumenda, 
-                    impedit temporibus ex deleniti, necessitatibus voluptate iure rem provident.
+                    {{frist.title}}
                 </p>
 
-                <a class="blogs-btn" href="{% url 'post' 5%}">Leer más!</a>
+                <a class="blogs-btn" href="{% url 'post' frist.id%}">Leer más!</a>
             </div>
         </div>
     </section><!-- FIN NOTICIAS NUEVAS-->
 
     <section class="posts">
         <h3>Ultimos Blogspost</h3>
+        {% for post in posts%}
         <div class="posts-blog">
-            <img src="img/post-1.png" alt="">
-            <h4>titulo del Blogspost</h4>
+            <img src="{{post.image.url}}" alt="">
+            <h4>{{post.title}}</h4>
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing 
-                elit. Delectus enim, consectetur quo exercitationem iure sapiente, aperiam totam voluptatem blanditiis, hic temporibus!
-                 Fugiat officia ipsa quis iure dolorem ipsam maxime pariatur.
+                {{post.descriptcion}}
             </p>
-            <a class="blogs-btn" href="blog.html">Leer más!</a>
+            <a class="blogs-btn" href="{% url 'post' post.id%}">Leer más!</a>
         </div> <!-- FIN DE POST -->
-
-        <div class="posts-blog">
-            <img src="img/post-2.png" alt="">
-            <h4>titulo del Blogspost</h4>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing 
-                elit. Delectus enim, consectetur quo exercitationem iure sapiente, aperiam totam voluptatem blanditiis, hic temporibus!
-                 Fugiat officia ipsa quis iure dolorem ipsam maxime pariatur.
-            </p>
-            <a class="blogs-btn" href="blog.html">Leer más!</a>
-        </div> <!-- FIN DE POST -->
-
-        <div class="posts-blog">
-            <img src="img/post-3.png" alt="">
-            <h4>titulo del Blogspost</h4>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing 
-                elit. Delectus enim, consectetur quo exercitationem iure sapiente, aperiam totam voluptatem blanditiis, hic temporibus!
-                 Fugiat officia ipsa quis iure dolorem ipsam maxime pariatur.
-            </p>
-            <a class="blogs-btn" href="blog.html">Leer más!</a>
-        </div> <!-- FIN DE POST -->
-
-        <div class="posts-blog">
-            <img src="img/post-1.png" alt="">
-            <h4>titulo del Blogspost</h4>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing 
-                elit. Delectus enim, consectetur quo exercitationem iure sapiente, aperiam totam voluptatem blanditiis, hic temporibus!
-                 Fugiat officia ipsa quis iure dolorem ipsam maxime pariatur.
-            </p>
-            <a class="blogs-btn" href="blog.html">Leer más!</a>
-        </div> <!-- FIN DE POST -->
-
-        <div class="posts-blog">
-            <img src="img/post-2.png" alt="">
-            <h4>titulo del Blogspost</h4>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing 
-                elit. Delectus enim, consectetur quo exercitationem iure sapiente, aperiam totam voluptatem blanditiis, hic temporibus!
-                 Fugiat officia ipsa quis iure dolorem ipsam maxime pariatur.
-            </p>
-            <a class="blogs-btn" href="blog.html">Leer más!</a>
-        </div> <!-- FIN DE POST -->
-
-        <div class="posts-blog">
-            <img src="img/post-3.png" alt="">
-            <h4>titulo del Blogspost</h4>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing 
-                elit. Delectus enim, consectetur quo exercitationem iure sapiente, aperiam totam voluptatem blanditiis, hic temporibus!
-                 Fugiat officia ipsa quis iure dolorem ipsam maxime pariatur.
-            </p>
-            <a class="blogs-btn" href="blog.html">Leer más!</a>
-        </div> <!-- FIN DE POST -->
-
-        
+        {% endfor %}
     </section> <!-- FIN DE LA SECCION DE POSTS-->
 </main>
 {% endblock %}

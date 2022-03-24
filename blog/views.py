@@ -7,10 +7,10 @@ from .models import Post
 # Create your views here.
 
 def posts(request):
-    blogs =  Post.objects.all()
-    return render(request, 'blogs.html')
+    frist_post = Post.objects.first()
+    posts =  Post.objects.all()
+    return render(request, 'blogs.html', {'posts':posts, 'frist':frist_post})
 
 def post(request, id):
-    #blog = Post.objects.get(id)
-    #content = f'{blog.title} - {blog.descriptcion}'
-    return render(request, 'blog.html')
+    blog = Post.objects.get(id=id)
+    return render(request, 'blog.html', {'post': blog})

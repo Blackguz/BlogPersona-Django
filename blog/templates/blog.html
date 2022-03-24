@@ -3,30 +3,13 @@
 {% block content %}
     <main class="main-blog">
         <div class="main-blog__content">
-            <img src="img/pc-img.jpg" alt="">
+            <img src="{{post.image.url}}" alt="">
 
             <article class="blog-content__article">
                 <h4>Noticia</h4>
-                <h1>Título del Blogpost</h1>
+                <h1>{{post.title}}</h1>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Laudantium molestiae libero voluptatem ipsum corrupti, officia sed harum, nulla eius, 
-                    suscipit alias labore voluptatibus eligendi minus consequuntur dolorem? Sunt, voluptate sequi.
-                </p>
-                <br>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia delectus sapiente enim, 
-                    accusantium commodi assumenda aspernatur cupiditate non esse. 
-                    Temporibus, harum! Illo tempora natus repellendus molestias earum optio accusamus voluptatibus!
-                </p>
-
-                <br>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                     At tempore officia quas quaerat suscipit accusantium quam possimus assumenda accusamus quo. 
-                    Incidunt impedit aut animi quo minima odio cumque perspiciatis laudantium?
-                </p>
+                <div>{{post.content | safe}}</div>
             </article>
         </div>
 
