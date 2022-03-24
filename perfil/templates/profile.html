@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title%}Mi perfil{% endblock %}
 
 {% block content%}
 <main>
     <section class="profile">
         <div class="profile-img">
-            <img src="img/profile-pic.jpg" alt="">
+            <img src="{% static 'img/profile-pic.jpg' %}" alt="">
         </div>
         <div class="profile-info">
             <h2>Hola mi nombre es Román Guzmán!</h2>
@@ -26,35 +26,14 @@
     
     <section class="project-container">
         <h3>Proyectos</h3>
+        {% for project in projects%}
         <div class="project">
-            <h4>Título del Proyecto</h4>
+            <h4>{{project.titel}}</h4>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ipsa veniam architecto, quas maxime temporibus nisi debitis 
-                ad fugit! Vel, soluta ad. Illo nihil voluptas qui quo 
-                at minus sequi. Soluta.
+              {{project.desc}} 
             </p>
         </div>
-
-        <div class="project">
-            <h4>Título del Proyecto</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ipsa veniam architecto, quas maxime temporibus nisi debitis 
-                ad fugit! Vel, soluta ad. Illo nihil voluptas qui quo 
-                at minus sequi. Soluta.
-            </p>
-        </div>
-
-        <div class="project">
-            <h4>Título del Proyecto</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ipsa veniam architecto, quas maxime temporibus nisi debitis 
-                ad fugit! Vel, soluta ad. Illo nihil voluptas qui quo 
-                at minus sequi. Soluta.
-            </p>
-        </div>
+        {% endfor %}
     </section>
 </main>
 {% endblock %}
