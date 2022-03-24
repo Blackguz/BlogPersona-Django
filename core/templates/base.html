@@ -24,13 +24,13 @@
 
         <nav class="nav">
             <div class="nav-logo">
-                <a href="/">
+                <a href="{% url 'home' %}">
                     <img class="" src="{% static 'img/logo.png' %}" alt="Logo de pagina">
                 </a>
             </div>
 
             <div class="nav-link">
-                <a href="perfil">Sobre mi</a>
+                <a href="{% url 'profile' %}">Sobre mi</a>
             </div>
         </nav>
     </header>
